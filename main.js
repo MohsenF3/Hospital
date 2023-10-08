@@ -3,7 +3,7 @@ let openNavBtn = document.querySelector(".open-nav-btn");
 let menu = document.querySelector(".nav-menu");
 let header = document.querySelector(".header");
 let navLinks = document.querySelectorAll(".nav-link");
-
+// ///// change navabr btn when it resize to mobile devices ////
 openNavBtn.addEventListener("click", () => {
   menu.style.display = "flex";
   openNavBtn.style.display = "none";
