@@ -1,0 +1,48 @@
+.testimonials {
+  .container {
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          padding: 1rem;
+          border-radius: 0.4rem;
+          @include linear();
+          p {
+            font-size: 0.8rem;
+            color: $light-color;
+          }
+          .swiper-slide-footer {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            margin-top: 1rem;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+            }
+            span {
+              display: block;
+              color: $white-color;
+              font-size: 0.9rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.swiper-wrapper {
+  margin-bottom: 2rem;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  position: relative;
+}
+
+.swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet-active {
+  background-color: $first-color;
+}

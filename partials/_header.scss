@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1rem 2rem rgba($dark-color, 0.2);
+  @include linear();
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-logo {
+      font-size: 1.3rem;
+      color: $white-color;
+      font-weight: 700;
+      span {
+        color: $success-color;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 1.5rem;
+      a {
+        font-weight: 500;
+        color: $white-color;
+        transition: all 0.3s ease;
+        &.btn {
+          &:hover {
+            color: $white-color;
+          }
+          &.active-link {
+            box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
+            color: $white-color;
+          }
+        }
+        &:hover,
+        &.active-link {
+          color: $second-color;
+        }
+      }
+    }
+    button {
+      display: none;
+    }
+  }
+}
+
+.header.change-color {
+  background: $white-color;
+  .container {
+    .nav-logo {
+      color: $dark-color;
+    }
+    ul {
+      a {
+        color: $dark-color;
+        &.btn {
+          color: $white-color;
+          &:hover {
+            color: $white-color;
+          }
+          &.active-link {
+            color: $white-color;
+          }
+        }
+        &:hover,
+        &.active-link {
+          color: $second-color;
+        }
+      }
+    }
+    button {
+      color: $black-color;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .container {
+      button {
+        display: inline-block;
+        cursor: pointer;
+        background-color: transparent;
+        color: $white-color;
+        font-size: 1.8rem;
+        &.close-nav-btn {
+          display: none;
+        }
+      }
+      ul {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        perspective: 300px;
+        display: none;
+        li {
+          width: 100%;
+          opacity: 0;
+          transform-origin: top;
+          animation: filpNavList 0.6s ease forwards;
+
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.6s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.8s;
+          }
+
+          @keyframes filpNavList {
+            0% {
+              transform: rotateX(90deg);
+            }
+            100% {
+              transform: rotateX(0deg);
+              opacity: 1;
+            }
+          }
+          a {
+            display: block;
+            padding: 1.3rem 2rem;
+            border-radius: 0;
+            background: linear-gradient(
+              $first-color-alt,
+              darken($first-color-alt, 12%)
+            );
+            &.btn {
+              background: $second-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

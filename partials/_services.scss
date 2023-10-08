@@ -1,0 +1,50 @@
+.services {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 3rem;
+    .services-card {
+      @include linear();
+      border-radius: 0 0 10% 10%;
+
+      padding: 1.5rem;
+      display: flex;
+      column-gap: 0.8rem;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: translateY(-10px);
+      }
+      .services-card-icon {
+        color: $white-color;
+        margin-top: 0.2rem;
+        font-size: 1.3rem;
+        color: $second-color;
+      }
+      .services-card-info {
+        color: $white-color;
+        p {
+          margin-top: 0.5rem;
+          font-size: 0.8rem;
+          color: $light-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .services {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  text-transform: capitalize;
+}
+
+$first-color: #480ca8;
+$first-color-alt: #4cc9f0;
+$second-color: #f72585;
+$white-color: #fff;
+$light-color: rgba(#fff, 0.7);
+$black-color: #0c031b;
+$dark-color: rgba($black-color, 0.7);
+$success-color: #54eb72;
+$container-lg: 82%;
+$container-md: 90%;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: $dark-color;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  background: rgba($first-color-alt, 0.1);
+  user-select: none;
+}
+.container {
+  max-width: $container-lg;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: 6rem;
+  & > h2 {
+    text-align: center;
+  }
+  & > p {
+    text-align: center;
+    width: 42%;
+    margin: 0.6rem auto 2.5rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  @include button();
+}
+
+.btn-primary {
+  @include button($first-color, $white-color);
+}
+/* === scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $first-color-alt;
+  border-radius: 0.1em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $first-color;
+  border-radius: 0.1em;
+}
+
+// //////////////// media queries /////////////
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: $container-md;
+  }
+  section {
+    & > p {
+      width: 55%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  section {
+    & > p {
+      width: $container-md;
+    }
+  }
+}
