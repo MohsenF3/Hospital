@@ -1,8 +1,8 @@
-let closeNavBtn = document.querySelector(".close-nav-btn");
-let openNavBtn = document.querySelector(".open-nav-btn");
-let menu = document.querySelector(".nav-menu");
-let header = document.querySelector(".header");
-let navLinks = document.querySelectorAll(".nav-link");
+let closeNavBtn = document.querySelector(".close-nav-btn"),
+    openNavBtn = document.querySelector(".open-nav-btn"),
+    menu = document.querySelector(".nav-menu"),
+    header = document.querySelector(".header"),
+    navLinks = document.querySelectorAll(".nav-link");
 // ///// change navabr btn when it resize to mobile devices ////
 openNavBtn.addEventListener("click", () => {
   menu.style.display = "flex";
